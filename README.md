@@ -17,9 +17,9 @@
 
 * Data load #1 ( Folder path)
 
-<pre>
-use database tpcds;
-truncate tpcds.store_sales;
-use schema public;
-copy into tpcds.store_sales from '@TPCDS_STAGE/store_sales/' file_format = (type = csv field_delimiter='|' error_on_column_count_mismatch=false VALIDATE_UTF8=false );
-</pre>
+    <pre>
+    use database tpcds;
+    truncate tpcds.store_sales;
+    use schema public;
+    copy into tpcds.store_sales from '@TPCDS_STAGE/store_sales/' file_format = (type = csv field_delimiter='|' error_on_column_count_mismatch=false VALIDATE_UTF8=false );
+    </pre>
