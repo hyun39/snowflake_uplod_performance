@@ -15,7 +15,8 @@
 
 
 
-Data load ( Folder path)
+* Data load #1 ( Folder path)
+
 <pre>
 use database tpcds;
 truncate tpcds.store_sales;
