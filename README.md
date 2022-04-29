@@ -2,16 +2,16 @@
 
 
 * Raw Data  : 
-    Data Size : 
-        187G
-    File lise :
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_1_8.dat',
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_2_8.dat',
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_3_8.dat',
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_4_8.dat',
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_5_8.dat',
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_6_8.dat',
-        's3://databricks-manure/tpc-ds/store_sales/store_sales_7_8.dat'
+    * Data Size : 
+        - 187G
+    * File lise :
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_1_8.dat',
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_2_8.dat',
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_3_8.dat',
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_4_8.dat',
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_5_8.dat',
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_6_8.dat',
+        -'s3://databricks-manure/tpc-ds/store_sales/store_sales_7_8.dat'
 
 
 
