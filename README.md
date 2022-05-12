@@ -53,6 +53,56 @@
   - 27분
 
 
+
+* Data Load #4
+
+ - Spark Connector
+ <pre>
+text = spark.read.csv("s3a://databricks-manure/tpc-ds/store_sales/", sep ='|', header = False,  inferSchema='True')
+text2 = text.withColumnRenamed("_c0","ss_sold_date_sk") \
+        .withColumnRenamed("_c1","ss_sold_time_sk") \
+        .withColumnRenamed("_c2","ss_item_sk")\
+        .withColumnRenamed("_c3","ss_customer_sk")\
+        .withColumnRenamed("_c4","ss_cdemo_sk")\
+        .withColumnRenamed("_c5","ss_hdemo_sk")\
+        .withColumnRenamed("_c6","ss_addr_sk")\
+        .withColumnRenamed("_c7","ss_store_sk")\
+        .withColumnRenamed("_c8","ss_promo_sk")\
+        .withColumnRenamed("_c9","ss_ticket_number")\
+        .withColumnRenamed("_c10","ss_quantity")\
+        .withColumnRenamed("_c11","ss_wholesale_cost")\
+        .withColumnRenamed("_c12","ss_list_price")\
+        .withColumnRenamed("_c13","ss_sales_price")\
+        .withColumnRenamed("_c14","ss_ext_discount_amt")\
+        .withColumnRenamed("_c15","ss_ext_sales_price")\
+        .withColumnRenamed("_c16","ss_ext_wholesale_cost")\
+        .withColumnRenamed("_c17",F"ss_ext_list_price")\
+        .withColumnRenamed("_c18","ss_ext_tax")\
+        .withColumnRenamed("_c19","ss_coupon_amt")\
+        .withColumnRenamed("_c20","ss_net_paid")\
+        .withColumnRenamed("_c21","ss_net_paid_inc_tax")\
+        .withColumnRenamed("_c22","ss_net_profit")
+
+sfOptions = { 
+"sfURL" : "atixoaj-dev_manure.snowflakecomputing.com", 
+"sfAccount" : "atixoaj-dev_manure", 
+"sfUser" : "manure", 
+"sfPassword" : "XXXXX", 
+"sfDatabase" : "TPCDS", 
+"sfSchema" : "TPCDS", 
+"sfWarehouse" : "DEMO_MANURE_S", 
+"sfRole" : "SYSADMIN", 
+}
+
+SNOWFLAKE_SOURCE_NAME = "net.snowflake.spark.snowflake"
+ 
+text2.write.format(SNOWFLAKE_SOURCE_NAME).options(**sfOptions).option("dbtable", "store_sales_test").mode("overwrite").save()
+
+데이터 전송에 30분 가량 소요.
+
+ <pre>
+
+
 # 참고
 * https://interworks.com/blog/2020/03/04/zero-to-snowflake-multi-threaded-bulk-loading-with-python/
 
